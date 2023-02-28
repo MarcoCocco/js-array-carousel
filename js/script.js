@@ -41,9 +41,16 @@ downArrowEl.addEventListener('click', function () {
     // incrementa l'indice corrente dell'immagine
     index++;
 
+    // BONUS 1
+    if (index > carouselImages.length - 1) {
+
+        index = 0;
+
+    };
+
     // mostra l'immagine corrente sul carosello
     mainCarouselImgEl.src = carouselImages[index];
-    
+
 
 });
 
@@ -52,6 +59,13 @@ upArrowEl.addEventListener('click', function () {
 
     // decrementa l'indice corrente dell'immagine
     index--;
+
+    // BONUS 1
+    if (index < 0) {
+
+        index = carouselImages.length -1;
+
+    };
 
     // mostra l'immagine corrente sul carosello
     mainCarouselImgEl.src = carouselImages[index];
