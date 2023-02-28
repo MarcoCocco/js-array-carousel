@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+.hiddenArrow {
+    display: none;
+}
+
 body {
     background-color: lightgray;
 }
@@ -44,6 +48,7 @@ body {
 
 .fa-solid:hover {
     color: white;
+    cursor: pointer;
 }
 
 .fa-circle-chevron-up {
