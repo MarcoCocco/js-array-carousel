@@ -12,7 +12,6 @@
 //10- decrementa l'indice corrente dell'immagine ad ogni click.
 //11- mostra l'immagine corrente sul carosello.
 
-
 // definisci un array di immagini
 let carouselImages = [
     'img/01.webp',
@@ -37,11 +36,13 @@ let index = 0;
 mainCarouselImgEl.src = carouselImages[index];
 
 let imgElements = document.querySelectorAll('.previewContainer');
-imgElements[index].classList.add('active');
 
+imgElements[index].classList.add('active');
 
 // aggiungi un gestore di eventi alla freccia giù
 downArrowEl.addEventListener('click', function () {
+
+    imgElements[index].classList.remove('active');
 
     // incrementa l'indice corrente dell'immagine
     index++;
@@ -51,19 +52,21 @@ downArrowEl.addEventListener('click', function () {
 
         index = 0;
 
-    };
-
+    } 
+    
     // mostra l'immagine corrente sul carosello
     mainCarouselImgEl.src = carouselImages[index];
 
     imgElements[index].classList.add('active');
-    imgElements[index - 1].classList.remove('active');
+    
 
 });
 
 // aggiungi un gestore di eventi alla freccia su
 upArrowEl.addEventListener('click', function () {
 
+    imgElements[index].classList.remove('active');
+    
     // decrementa l'indice corrente dell'immagine
     index--;
 
@@ -72,13 +75,13 @@ upArrowEl.addEventListener('click', function () {
 
         index = carouselImages.length - 1;
 
-    };
+    }
 
     // mostra l'immagine corrente sul carosello
     mainCarouselImgEl.src = carouselImages[index];
 
     imgElements[index].classList.add('active');
-    imgElements[index + 1].classList.remove('active');
+    
     
 });
 
